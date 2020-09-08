@@ -1,13 +1,14 @@
+
 /************************************************************** Task 1: Warm-up! **************************************************************/
 //Task a: declare a variable called votingAge, console log true if age > 18 (no function required)
 
-let votingAge = 17;
+let votingAge = 17; // Should return False
 
 if (votingAge>18) {
     console.log("True");
 }
 else {
-    console.log("False");
+    console.log("False"); 
 }
 
 
@@ -20,13 +21,13 @@ let windSpeed = 0;
 if (windSpeed<5) {
     lake = "Still";
 }
-console.log(lake);
+console.log(lake); // Should return "Still"
 
 //Task c: Convert string ("1999") to integer (1999)  (no function required) // hint look up the Number method
 
 Number("1999");
 
-console.log(Number("1999")*2); // Testing to see if the result is actually an integer
+console.log(Number("1999")*2); // Testing to see if the result is actually an integer, should return 3998
 
 
 
@@ -37,7 +38,7 @@ function multiply(a,b) {
     return a*b;
 }
 
-console.log(multiply(2,3));
+console.log(multiply(2,3)); // Should return 6
 
 
 /************************************************************** Task 2 **************************************************************/
@@ -48,7 +49,7 @@ function dogYearsCalc(myAge) {
     return myAge*7;
 }
 
-console.log(dogYearsCalc(27));
+console.log(dogYearsCalc(27)); // Should return 189
 
 
 
@@ -101,7 +102,7 @@ function dogFeeder(dogAge,dogWeight) {
         }
     }
 }
-console.log(dogFeeder(1,15));
+console.log(dogFeeder(1,15)); // Should return 0.44999999999...
 
 
 
@@ -113,39 +114,69 @@ console.log(dogFeeder(1,15));
 // use math.random to determine the computers choice 
 // hint while you can complete this with only conditionals based on strings it may help to equate choice to a number 
 
-  function game(guess, opponent) {
-    let decider = math.floor(math.random()*3);
-    if (decider = 1) {
-        opponent = "rock";
+  function game(guess) {
+    let opponent = Math.floor(Math.random()*3 + 1);
+    if (opponent == 1) {
+        console.log("The opponent chose rock");
     }
-    else if (decider = 2) {
-        opponent = "paper";
+    else if (opponent == 2) {
+        console.log("The opponent chose paper");
     }
-    else if (decider = 3) {
-        opponent = "scissors";
+    else if (opponent == 3) {
+        console.log("The opponent chose scissors");
     }
     else {
         console.log("Something went wrong");
-    }
+    } // Reveals what the opponent chose. Should be random when the function is called multiple times.
 
-    if (guess=opponent) { //CHECK COMPARING STRINGS
-        return 
+    if (guess == "rock") {
+        guess = 1;
     }
-  }
-  
+    else if (guess == "paper") {
+        guess = 2;
+    }
+    else if (guess == "scissors") {
+        guess = 3;
+    }
+    else {
+        console.log("Something went wrong");
+    } // Converts user's guess into comparable format
+
+    if (guess==opponent) { 
+        return "It's a tie!"
+    }
+    else if (guess-opponent==1 || guess==1 && opponent==3) {
+        return "You win!"
+    }
+    else {
+        return "Better luck next time!"
+    } // Returns result of comparison
+  } 
+
+  console.log(game("scissors")); // Depending on the opponent variable (also printed), result should be correct for the real world game
+  console.log(game("scissors")); // Depending on the opponent variable (also printed), result should be correct for the real world game
+
+
 
 /************************************************************** Task 5 **************************************************************/
 //Metric Converter
 //a. KM to Miles - should take the number of kilometers and convert it to the equal number of miles
 
+function kmToMiles(kilometers) {
+    return kilometers/1.609;
+}
 
+console.log(kmToMiles(1)); // Should print 0.621
 
 
 
 //b. Feet to CM - should take the number of feet and convert it to the equal number of centimeters
   
+function feetToCM(feet) {
+    return feet*30.48;
+}
 
-
+console.log(feetToCM(2)); // Should print 60.96
 
 
 /************************************************************** Task 6 **************************************************************/
@@ -153,7 +184,9 @@ console.log(dogFeeder(1,15));
 // create a function called annoyingSong
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
-
+function annoyingSong(startNum) {
+    for (i=)
+}
 
 
 
