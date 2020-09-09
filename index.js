@@ -147,7 +147,7 @@ console.log(dogFeeder(1,15)); // Should return 0.44999999999...
     }
     else if (guess-opponent==1 || guess==1 && opponent==3) {
         return "You win!"
-    }
+    } // guess==1 && opponent==3 is rock smashing scissors
     else {
         return "Better luck next time!"
     } // Returns result of comparison
@@ -222,7 +222,7 @@ annoyingSong(4); // Should print the song 4 times with the numbers decrementing 
       }
   }
   
-  console.log("Your grade is " + whatsMyGrade(87.9)); // Should return "You earned a B"
+  console.log("Your grade is " + whatsMyGrade(87.9)); // Should return "Your grade is B"
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
@@ -251,6 +251,9 @@ console.log(vowelCounter("tUrtle")); // Should print 2
 /************************************************************** Stretch **************************************************************/
 //Take Rock, Paper, Scissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
+
+/* COMMENTED OUT BECAUSE OF ANNOYING DIALOGUE BOX
+
 
 let guess2 = prompt("Want to play?", "rock, paper, or scissors");
 function game2() {
@@ -295,3 +298,4 @@ function game2() {
 
   console.log(game(guess2)); // Depending on the opponent variable (also printed), result should be correct for the real world game
  
+*/
