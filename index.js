@@ -185,8 +185,12 @@ console.log(feetToCM(2)); // Should print 60.96
 // the function should take a starting number as an argument and count down - at each iteration it should log (number) bottles of soda on the wall, (number) bottles of soda, take one down pass it around (number left over) bottles of soda on the wall`
   
 function annoyingSong(startNum) {
-    for (i=)
+    for (let i=startNum; i>0; i--) {
+        console.log(i + " bottles of soda on the wall, " + i + " bottles of soda, take one down pass it around, " + (i-1) + " bottles of soda on the wall!");
+    }
 }
+
+annoyingSong(4); // Should print the song 4 times with the numbers decrementing correctly 
 
 
 
@@ -200,23 +204,94 @@ function annoyingSong(startNum) {
 //and anything below 60 should be F
   
 
+  function whatsMyGrade(percentage) {
+      if (percentage>=90) {
+          return "A";
+      }
+      else if (percentage>=80) {
+        return "B";
+      }
+      else if (percentage>=70) {
+        return "C";
+      }
+      else if (percentage>=60) {
+        return "D";
+      }
+      else {
+        return "F";
+      }
+  }
   
-  
+  console.log("Your grade is " + whatsMyGrade(87.9)); // Should return "You earned a B"
 
 /************************************************************** Stretch **************************************************************/
 //Create a function that counts the number of vowels within a string. It should handle both capitalized and uncapitalized vowels.
 // Hint - you may need to study tomorrow's traning kit on arrays 
 // try looking up the .includes() method
 
+function vowelCounter(word) {
+    let numVowels = 0;
+    const vowels = ["a", "e", "i", "o", "u"];
+    for (i=0; i<word.length; i++) {
+        for (j=0; j<vowels.length; j++) {
+            if (word.toLowerCase()[i]==vowels[j]) {
+                numVowels++;
+            }    
+        }
+    }
+    return numVowels;
 
+}
 
+console.log(vowelCounter("frog")); // Should print 1
+console.log(vowelCounter("turtle")); // Should print 2
+console.log(vowelCounter("tUrtle")); // Should print 2
 
 
 /************************************************************** Stretch **************************************************************/
-//Take Rock, Paper, Sissors further
+//Take Rock, Paper, Scissors further
 //update your rock papers sissors code below to take a prompt from a user using the window object
 
+let guess2 = prompt("Want to play?", "rock, paper, or scissors");
+function game2() {
 
+    let opponent2 = Math.floor(Math.random()*3 + 1);
+    if (opponent2 == 1) {
+        console.log("The opponent chose rock");
+    }
+    else if (opponent2 == 2) {
+        console.log("The opponent chose paper");
+    }
+    else if (opponent2 == 3) {
+        console.log("The opponent chose scissors");
+    }
+    else {
+        console.log("Something went wrong");
+    } // Reveals what the opponent chose. Should be random when the function is called multiple times.
 
+    if (guess2 == "rock") {
+        guess2 = 1;
+    }
+    else if (guess2 == "paper") {
+        guess2 = 2;
+    }
+    else if (guess2 == "scissors") {
+        guess2 = 3;
+    }
+    else {
+        console.log("Something went wrong");
+    } // Converts user's guess into comparable format
 
+    if (guess2==opponent2) { 
+        return "It's a tie!"
+    }
+    else if (guess2-opponent2==1 || guess2==1 && opponent2==3) {
+        return "You win!"
+    }
+    else {
+        return "Better luck next time!"
+    } // Returns result of comparison
+  } 
 
+  console.log(game(guess2)); // Depending on the opponent variable (also printed), result should be correct for the real world game
+ 
